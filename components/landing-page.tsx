@@ -56,7 +56,7 @@ export default function LandingPage() {
               <div className="flex items-center justify-between">
                 <Link href="#" className="-m-1.5 p-1.5">
                   <span className="sr-only">Edion</span>
-                  <Image className="h-8 w-auto" src="/placeholder.svg" alt="Edion Logo" width={32} height={32} />
+                  <Image className="h-8 w-auto" src="/placeholder.svg" alt="Edion Logo" />
                 </Link>
                 <button
                   type="button"
@@ -241,23 +241,34 @@ export default function LandingPage() {
                   imageUrl: '/placeholder.svg',
                 },
                 {
-                  name: 'Team Member 4',
-                  role: 'Role 4',
-                  imageUrl: '/placeholder.svg',
+                  name: 'Ding Kang Pang',
+                  role: 'Machine Learning Engineer',
+                  imageUrl: '/dk.png',
                 },
                 {
-                  name: 'Team Member 5',
-                  role: 'Role 5',
-                  imageUrl: '/placeholder.svg',
+                  name: 'Linus Bach',
+                  role: 'Machine Learning Engineer',
+                  imageUrl: '/linus.png',
                 },
                 {
-                  name: 'Team Member 6',
-                  role: 'Role 6',
-                  imageUrl: '/placeholder.svg',
+                  name: 'Ondrej Horvath',
+                  role: 'Business Development Analyst',
+                  imageUrl: '/ondrej.png',
+                },
+                {
+                  name: 'Matej Illas',
+                  role: 'Business Development Analyst',
+                  imageUrl: '/matej.png',
                 },
               ].map((person) => (
                 <li key={person.name} className="text-center">
-                  <Image className="mx-auto h-24 w-24 rounded-full" src={person.imageUrl} alt="" width={96} height={96} />
+                  <Image 
+                        className="mx-auto h-24 w-24 rounded-full aspect-square object-cover" 
+                        src={person.imageUrl} 
+                        alt="" 
+                        width={96}
+                        height={96}
+                        />
                   <h3 className="mt-6 text-base font-semibold leading-7 tracking-tight text-white">{person.name}</h3>
                   <p className="text-sm leading-6 text-[#d8b4e2]">{person.role}</p>
                 </li>
@@ -279,7 +290,7 @@ export default function LandingPage() {
               </a>
             </div>
             <p className="text-sm text-[#d8b4e2]">
-              © 2024 Edion. All rights reserved.
+              © 2024 Edion Management Systems. All rights reserved.
             </p>
           </div>
         </div>
