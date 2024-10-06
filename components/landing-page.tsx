@@ -17,8 +17,8 @@ export default function LandingPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <div className="bg-[#210b2c] min-h-screen text-white">
-      <header className="fixed inset-x-0 top-0 z-50 bg-[#210b2c]">
+    <div className="bg-primary min-h-screen text-white">
+      <header className="fixed inset-x-0 top-0 z-50 bg-primary">
         <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
           <div className="flex lg:flex-1">
             <Link href="#" className="-m-1.5 p-1.5">
@@ -30,7 +30,7 @@ export default function LandingPage() {
             <button
               type="button"
               className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white"
-              onClick={() => setMobileMenuOpen(true)}
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
               <span className="sr-only">Open main menu</span>
               <Menu className="h-6 w-6" aria-hidden="true" />
@@ -38,13 +38,13 @@ export default function LandingPage() {
           </div>
           <div className="hidden lg:flex lg:gap-x-12">
             {navigation.map((item) => (
-              <a key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-white hover:text-[#d8b4e2]">
+              <a key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-white hover:text-highlight">
                 {item.name}
               </a>
             ))}
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <a href="#" className="text-sm font-semibold leading-6 text-white hover:text-[#d8b4e2]">
+            <a href="#" className="text-sm font-semibold leading-6 text-white hover:text-highlight">
               Join Us <span aria-hidden="true">&rarr;</span>
             </a>
           </div>
@@ -52,7 +52,7 @@ export default function LandingPage() {
         {mobileMenuOpen && (
           <div className="lg:hidden">
             <div className="fixed inset-0 z-50" />
-            <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-[#210b2c] px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+            <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-primary px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
               <div className="flex items-center justify-between">
                 <Link href="#" className="-m-1.5 p-1.5">
                   <span className="sr-only">Edion</span>
@@ -74,7 +74,8 @@ export default function LandingPage() {
                       <a
                         key={item.name}
                         href={item.href}
-                        className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-[#55286f]"
+                        className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-secondary"
+                        onClick={() => setMobileMenuOpen(false)}
                       >
                         {item.name}
                       </a>
@@ -83,7 +84,8 @@ export default function LandingPage() {
                   <div className="py-6">
                     <a
                       href="#"
-                      className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-white hover:bg-[#55286f]"
+                      className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-white hover:bg-secondary"
+                      onClick={() => setMobileMenuOpen(false)}
                     >
                       Join Us
                     </a>
