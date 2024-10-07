@@ -5,7 +5,7 @@ import '../styles/globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Edion - Empowering Educators, Inspiring Learners',
+  title: 'Edion',
   description: 'Edion is revolutionizing education with AI-powered solutions that reduce administrative burdens and enhance learning experiences.',
 }
 

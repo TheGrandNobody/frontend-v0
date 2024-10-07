@@ -23,7 +23,7 @@ export default function LandingPage() {
           <div className="flex lg:flex-1">
             <Link href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Edion</span>
-              <Image className="h-8 w-auto" src="/logo.png" alt="Edion Logo" width={32} height={32} />
+              <Image className="h-28 w-auto" src="/logo.png" alt="Edion Logo" width={2000} height={2000} />
             </Link>
           </div>
           <div className="flex lg:hidden">
@@ -56,7 +56,7 @@ export default function LandingPage() {
               <div className="flex items-center justify-between">
                 <Link href="#" className="-m-1.5 p-1.5">
                   <span className="sr-only">Edion</span>
-                  <Image className="h-8 w-auto" src="/placeholder.svg" alt="Edion Logo" />
+                  <Image className="h-16 w-auto" src="/logo_no_name.png" alt="Edion Logo" width={256} height={256} />
                 </Link>
                 <button
                   type="button"
@@ -102,10 +102,10 @@ export default function LandingPage() {
           <div className="mx-auto max-w-4xl py-32 sm:py-48 lg:py-56">
             <div className="text-center">
               <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
-                Empowering Educators, Inspiring Learners
+                  Elevating Educators,<br></br> Inspiring Learners
               </h1>
               <p className="mt-6 text-lg leading-8 text-[#d8b4e2]">
-                Edion is revolutionizing education with AI-powered solutions that reduce administrative burdens and enhance learning experiences.
+                Educational tools that empower teachers and students
               </p>
               <div className="mt-10 flex items-center justify-center gap-x-6">
                 <a
@@ -127,7 +127,7 @@ export default function LandingPage() {
             <div className="mx-auto max-w-2xl lg:text-center">
               <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Our Mission</h2>
               <p className="mt-6 text-lg leading-8 text-[#d8b4e2]">
-                We're here to ease the burden on teachers' shoulders, put their time back in their hands, and help them enjoy the work they love.
+              We're here to ease the burden on teachers' shoulders, put their time back in their hands, and help them enjoy the work they love.
               </p>
             </div>
           </div>
@@ -138,25 +138,25 @@ export default function LandingPage() {
             <div className="mx-auto max-w-2xl lg:text-center">
               <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">What We Do</h2>
               <p className="mt-6 text-lg leading-8 text-[#d8b4e2]">
-                Edion focuses on transforming education through our Teaching Assistant and Intelligent Tutoring System.
+              We designed an essential suite of tools ready to accompany teachers every step of the way, any time of the day.
               </p>
             </div>
             <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
               <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
                 {[
                   {
-                    name: 'Talk To Your cApp',
-                    description: 'Lifelike applications designed to meet educators\' needs through a speech-first interface.',
+                    name: 'cApps',
+                    description: 'Lifelike applications that understand anyone and that anyone can understand. Effortlessly.',
                     icon: Cpu,
                   },
                   {
-                    name: 'Unity',
-                    description: 'The educator\'s workbench, revolutionizing administrative tasks and content creation.',
+                    name: 'Slate',
+                    description: 'The educator\'s workstation revolutionizing the way teachers handle administrative tasks.',
                     icon: BookOpen,
                   },
                   {
-                    name: 'Intelligent Tutoring System',
-                    description: 'Personalized learning pathways adapting to individual student needs.',
+                    name: 'FactFlow',
+                    description: 'Personalized learning experiences that adapt to each student\'s needs and pace.',
                     icon: GraduationCap,
                   },
                 ].map((feature) => (
@@ -185,11 +185,11 @@ export default function LandingPage() {
             </div>
             <div className="mt-16 flex flex-col lg:flex-row items-center justify-center gap-8">
               <div className="w-full lg:w-1/2">
-                <Image src="/placeholder.svg" alt="Product Screenshot" className="rounded-lg shadow-xl" width={600} height={400} />
+                <Image src="/demo.gif" alt="Product Demo" className="rounded-lg shadow-xl" width={2000} height={2000} />
               </div>
               <div className="w-full lg:w-1/2 space-y-4">
-                <h3 className="text-2xl font-bold text-white">Unity: The Educator's Workbench</h3>
-                <p className="text-[#d8b4e2]">Unity streamlines administrative tasks, freeing up valuable time for educators to focus on what matters most - teaching and connecting with students.</p>
+                <h3 className="text-2xl font-bold text-white">Slate: The Educator's Workbench</h3>
+                <p className="text-[#d8b4e2]">Slate streamlines administrative tasks, freeing up valuable time for educators to focus on what matters most - teaching and connecting with students.</p>
                 <ul className="list-disc list-inside text-[#d8b4e2] space-y-2">
                   <li>Automated grading and report generation</li>
                   <li>Personalized content creation</li>
@@ -197,7 +197,7 @@ export default function LandingPage() {
                   <li>Intuitive, conversational interface</li>
                 </ul>
                 <a href="#" className="inline-block mt-4 px-4 py-2 bg-[#ae759f] text-white rounded-md hover:bg-[#bc96e6] transition-colors">
-                  Learn More About Unity
+                  Learn More About Slate
                 </a>
               </div>
             </div>
