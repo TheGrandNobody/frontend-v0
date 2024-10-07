@@ -319,6 +319,37 @@ export default function LandingPage() {
           </section>
         </main>
 
+        <section id="affiliates" className="py-24 sm:py-32">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="mx-auto max-w-2xl lg:text-center">
+              <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Our Affiliates</h2>
+              <p className="mt-6 text-lg leading-8 text-[#d8b4e2]">
+                We're proud to work with these outstanding organizations.
+              </p>
+            </div>
+            <div className="mt-16 flex flex-wrap justify-center items-center gap-12">
+              <Image
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/venturelab-north-logo-qMlz5z1ER8xwbYsjuMFahlcWckmBqi.svg"
+                  alt="VentureLab North Logo"
+                  width={273}
+                  height={82}
+              />
+              <Image
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/eurc-logo-jxbUzKkYcKuIo6Arjis7P38bogGkUc.svg"
+                  alt="EURC Logo"
+                  width={130}
+                  height={82}
+              />
+              <Image
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/snn-logo-EZ8EW4TSKsU7uipTCNb1N00vdv6FQb.svg"
+                  alt="SNN Logo"
+                  width={152}
+                  height={88}
+              />
+            </div>
+          </div>
+        </section>
+
         <footer className="bg-[#210b2c] py-12 relative z-10">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="flex justify-between items-center">
