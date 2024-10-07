@@ -23,7 +23,7 @@ export default function LandingPage() {
           <div className="flex lg:flex-1">
             <Link href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Edion</span>
-              <Image className="h-28 w-auto" src="/logo.png" alt="Edion Logo" width={2000} height={2000} />
+              <Image className="h-16 w-auto" src="/logo1.svg" alt="Edion Logo" width={2000} height={2000} />
             </Link>
           </div>
           <div className="flex lg:hidden">
@@ -56,7 +56,7 @@ export default function LandingPage() {
               <div className="flex items-center justify-between">
                 <Link href="#" className="-m-1.5 p-1.5">
                   <span className="sr-only">Edion</span>
-                  <Image className="h-16 w-auto" src="/logo_no_name.png" alt="Edion Logo" width={256} height={256} />
+                  <Image className="h-16 w-auto" src="/logo1.svg" alt="Edion Logo" width={256} height={256} />
                 </Link>
                 <button
                   type="button"
