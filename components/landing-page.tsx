@@ -37,8 +37,8 @@ export default function LandingPage() {
         </div>
       </div>
 
-      <div className="relative z-10">
-        <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-[#210b2c] bg-opacity-90 shadow-lg' : 'bg-transparent'}`}>
+      <div className="relative z-10 min-h-screen flex flex-col">
+        <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-[#210b2c] bg-opacity-90 shadow-lg' : ''}`}>
           <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
             <div className="flex lg:flex-1">
               <Link href="#" className="-m-1.5 p-1.5">
@@ -117,9 +117,9 @@ export default function LandingPage() {
           )}
         </header>
 
-        <main>
-          <div className="relative isolate px-6 pt-14 lg:px-8">
-            <div className="mx-auto max-w-4xl py-32 sm:py-48 lg:py-56">
+        <main className="flex-grow">
+          <div className="relative isolate px-6 pt-14 lg:px-8 min-h-screen flex flex-col justify-center">
+            <div className="mx-auto max-w-4xl py-32 sm:py-48 lg:py-56 flex-grow flex flex-col justify-center">
               <div className="text-center">
                 <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl mb-4 animate-fade-in-up">
                   Elevating Educators,<br />Inspiring Learners
@@ -141,6 +141,7 @@ export default function LandingPage() {
               </div>
             </div>
           </div>
+        </main>
 
           <section id="mission" className="bg-[#55286f] py-24 sm:py-32">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -317,7 +318,6 @@ export default function LandingPage() {
               </ul>
             </div>
           </section>
-        </main>
 
         <section id="affiliates" className="py-24 sm:py-32">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
