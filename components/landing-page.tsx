@@ -304,8 +304,8 @@ export default function LandingPage() {
               <Image
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/eurc-logo-jxbUzKkYcKuIo6Arjis7P38bogGkUc.svg"
                   alt="EURC Logo"
-                  width={260}
-                  height={164}
+                  width={130}
+                  height={82}
               />
               <Image
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/snn-logo-EZ8EW4TSKsU7uipTCNb1N00vdv6FQb.svg"
