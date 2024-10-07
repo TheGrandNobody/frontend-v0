@@ -124,7 +124,7 @@ export default function LandingPage() {
                 <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl mb-4 animate-fade-in-up">
                   Elevating Educators,<br />Inspiring Learners
                 </h1>
-                <p className="mt-6 text-lg leading-8 text-[#210b2c] animate-fade-in-up animation-delay-300">
+                <p className="mt-6 text-lg leading-8 text-[#d8b4e2] animate-fade-in-up animation-delay-300">
                   Educational tools that empower teachers and students
                 </p>
                 <div className="mt-10 flex items-center justify-center gap-x-6 animate-fade-in-up animation-delay-600">
