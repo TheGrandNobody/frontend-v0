@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { Menu, X, ChevronDown, Cpu, BookOpen, GraduationCap } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog"
 
 const navigation = [
   { name: 'Our Mission', href: '#mission' },
@@ -15,6 +16,7 @@ const navigation = [
 
 export default function LandingPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [isImageModalOpen, setIsImageModalOpen] = useState(false)
 
   return (
     <div className="bg-primary min-h-screen text-white">
@@ -23,7 +25,7 @@ export default function LandingPage() {
           <div className="flex lg:flex-1">
             <Link href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Edion</span>
-              <Image className="h-16 w-auto" src="/logo1.svg" alt="Edion Logo" width={2000} height={2000} />
+              <Image className="h-10 w-auto" src="/logo6.svg" alt="Edion Logo" width={2000} height={2000} />
             </Link>
           </div>
           <div className="flex lg:hidden">
@@ -56,7 +58,7 @@ export default function LandingPage() {
               <div className="flex items-center justify-between">
                 <Link href="#" className="-m-1.5 p-1.5">
                   <span className="sr-only">Edion</span>
-                  <Image className="h-16 w-auto" src="/logo1.svg" alt="Edion Logo" width={256} height={256} />
+                  <Image className="h-16 w-auto" src="/logo.svg" alt="Edion Logo" width={256} height={256} />
                 </Link>
                 <button
                   type="button"
@@ -185,7 +187,28 @@ export default function LandingPage() {
             </div>
             <div className="mt-16 flex flex-col lg:flex-row items-center justify-center gap-8">
               <div className="w-full lg:w-1/2">
-                <Image src="/demo.gif" alt="Product Demo" className="rounded-lg shadow-xl" width={2000} height={2000} />
+                <Dialog open={isImageModalOpen} onOpenChange={setIsImageModalOpen}>
+                  <DialogTrigger asChild>
+                    <button className="w-full focus:outline-none focus:ring-2 focus:ring-[#ae759f] focus:ring-offset-2 focus:ring-offset-[#55286f] rounded-lg overflow-hidden">
+                      <Image 
+                        src="/demo.gif" 
+                        alt="Product Demo" 
+                        className="rounded-lg shadow-xl w-full h-auto transition-transform duration-300 transform hover:scale-105" 
+                        width={2000} 
+                        height={2000} 
+                      />
+                    </button>
+                  </DialogTrigger>
+                  <DialogContent className="max-w-4xl w-full bg-[#55286f] border-none">
+                    <Image 
+                      src="/demo.gif" 
+                      alt="Product Demo" 
+                      className="w-full h-auto" 
+                      width={2000} 
+                      height={2000} 
+                    />
+                  </DialogContent>
+                </Dialog>
               </div>
               <div className="w-full lg:w-1/2 space-y-4">
                 <h3 className="text-2xl font-bold text-white">Slate: The Educator's Workbench</h3>
@@ -228,7 +251,7 @@ export default function LandingPage() {
                 {
                   name: 'Ark Deliev',
                   role: 'Co-founder, CEO',
-                  imageUrl: '/placeholder.svg',
+                  imageUrl: '/ark.png',
                 },
                 {
                   name: 'Olivia Monné',
@@ -238,7 +261,7 @@ export default function LandingPage() {
                 {
                   name: 'Liam McGillycuddy',
                   role: 'Business & Outreach Coordinator',
-                  imageUrl: '/placeholder.svg',
+                  imageUrl: '/liam.png',
                 },
                 {
                   name: 'Ding Kang Pang',
@@ -251,12 +274,12 @@ export default function LandingPage() {
                   imageUrl: '/linus.png',
                 },
                 {
-                  name: 'Ondrej Horvath',
+                  name: 'Ondrej Horváth',
                   role: 'Business Development Analyst',
                   imageUrl: '/ondrej.png',
                 },
                 {
-                  name: 'Matej Illas',
+                  name: 'Matej Illáš',
                   role: 'Business Development Analyst',
                   imageUrl: '/matej.png',
                 },
@@ -282,12 +305,6 @@ export default function LandingPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="flex justify-between items-center">
             <div className="flex items-center space-x-4">
-              <a href="http://www.softwarefreedom.org/">
-                <Image src="http://www.softwarefreedom.org/img/support-sflc.png" alt="Support SFLC" height={31} width={88} />
-              </a>
-              <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
-                <Image alt="Creative Commons License" src="https://i.creativecommons.org/l/by/4.0/88x31.png" width={88} height={31} />
-              </a>
             </div>
             <p className="text-sm text-[#d8b4e2]">
               © 2024 Edion Management Systems. All rights reserved.
