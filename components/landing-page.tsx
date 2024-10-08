@@ -275,7 +275,7 @@ export default function LandingPage() {
                   {
                     name: 'Olivia Monné',
                     role: 'Co-founder, CTO',
-                    imageUrl: '/placeholder.svg',
+                    imageUrl: '/olivia.png',
                   },
                   {
                     name: 'Liam McGillycuddy',
