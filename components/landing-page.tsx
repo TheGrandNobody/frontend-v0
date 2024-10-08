@@ -124,7 +124,7 @@ export default function LandingPage() {
                 <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl mb-4 animate-fade-in-up">
                   Elevating Educators,<br />Inspiring Learners
                 </h1>
-                <p className="mt-6 text-lg leading-8 text-[#d8b4e2] animate-fade-in-up animation-delay-300">
+                <p className="mt-6 text-lg leading-8 text-[#e8d2ee] animate-fade-in-up animation-delay-300">
                   Educational tools that empower teachers and students
                 </p>
                 <div className="mt-10 flex items-center justify-center gap-x-6 animate-fade-in-up animation-delay-600">
@@ -147,7 +147,7 @@ export default function LandingPage() {
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
               <div className="mx-auto max-w-2xl lg:text-center">
                 <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Our Mission</h2>
-                <p className="mt-6 text-lg leading-8 text-[#d8b4e2]">
+                <p className="mt-6 text-lg leading-8 text-[#e8d2ee]">
                   We're here to ease the burden on teachers' shoulders, put their time back in their hands, and help them enjoy the work they love.
                 </p>
               </div>
@@ -200,7 +200,7 @@ export default function LandingPage() {
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
               <div className="mx-auto max-w-2xl lg:text-center">
                 <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Our Product</h2>
-                <p className="mt-6 text-lg leading-8 text-[#d8b4e2]">
+                <p className="mt-6 text-lg leading-8 text-[#e8d2ee]">
                   Discover how our AI-powered solutions are transforming the educational landscape.
                 </p>
               </div>
@@ -231,8 +231,8 @@ export default function LandingPage() {
                 </div>
                 <div className="w-full lg:w-1/2 space-y-4">
                   <h3 className="text-2xl font-bold text-white">Slate: The Educator's Workbench</h3>
-                  <p className="text-[#d8b4e2]">Slate streamlines administrative tasks, freeing up valuable time for educators to focus on what matters most - teaching and connecting with students.</p>
-                  <ul className="list-disc list-inside text-[#d8b4e2] space-y-2">
+                  <p className="text-[#e8d2ee]">Slate streamlines administrative tasks, freeing up valuable time for educators to focus on what matters most - teaching and connecting with students.</p>
+                  <ul className="list-disc list-inside text-[#e8d2ee] space-y-2">
                     <li>Automated grading and report generation</li>
                     <li>Personalized content creation</li>
                     <li>Student progress tracking</li>
@@ -261,7 +261,7 @@ export default function LandingPage() {
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
               <div className="mx-auto max-w-2xl lg:text-center">
                 <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Meet the Team</h2>
-                <p className="mt-6 text-lg leading-8 text-[#d8b4e2]">
+                <p className="mt-6 text-lg leading-8 text-[#e8d2ee]">
                   Our diverse team brings expertise in AI, urban and economic geography, and real-world applications.
                 </p>
               </div>
@@ -312,7 +312,7 @@ export default function LandingPage() {
                       height={96}
                     />
                     <h3 className="mt-6 text-base font-semibold leading-7 tracking-tight text-white">{person.name}</h3>
-                    <p className="text-sm leading-6 text-[#d8b4e2]">{person.role}</p>
+                    <p className="text-sm leading-6 text-[#e8d2ee]">{person.role}</p>
                   </li>
                 ))}
               </ul>
