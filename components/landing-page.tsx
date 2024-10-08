@@ -262,7 +262,7 @@ export default function LandingPage() {
               <div className="mx-auto max-w-2xl lg:text-center">
                 <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Meet the Team</h2>
                 <p className="mt-6 text-lg leading-8 text-[#e8d2ee]">
-                  Our diverse team brings expertise in AI, urban and economic geography, and real-world applications.
+                  Our diverse team brings expertise in AI, seasoned entrepreneurship, business accumen and real-world applications.
                 </p>
               </div>
               <ul role="list" className="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3">
