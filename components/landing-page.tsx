@@ -283,7 +283,7 @@ export default function LandingPage() {
                     imageUrl: '/liam.png',
                   },
                   {
-                    name: 'Ding Kang Pang',
+                    name: 'Dingkang Pang',
                     role: 'Machine Learning Engineer',
                     imageUrl: '/dk.png',
                   },
