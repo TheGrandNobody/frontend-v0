@@ -12,6 +12,7 @@ const navigation = [
   { name: 'Our Product', href: '#our-product' },
   { name: 'Progress', href: '#progress' },
   { name: 'Team', href: '#team' },
+  { name: 'Pricing', href: '/pricing' },
 ]
 
 export default function LandingPage() {
@@ -58,9 +59,9 @@ export default function LandingPage() {
             </div>
             <div className="hidden lg:flex lg:gap-x-12">
               {navigation.map((item) => (
-                <a key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-white hover:text-[#d8b4e2] transition-colors duration-300">
+                <Link key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-white hover:text-[#d8b4e2] transition-colors duration-300">
                   {item.name}
-                </a>
+                </Link>
               ))}
             </div>
             <div className="hidden lg:flex lg:flex-1 lg:justify-end">
