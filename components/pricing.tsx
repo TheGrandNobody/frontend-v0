@@ -31,7 +31,7 @@ export default function PricingPage() {
               Coming Soon
             </div>
             <p className="mt-8 text-lg text-[#e8d2ee] animate-fade-in-up animation-delay-1200">
-              We're finalizing our pricing structure to ensure we offer the best value for educators and institutions. 
+              We're finalizing our pricing structure to ensure we offer the best value for educators and institutions.<br />
               Stay tuned for updates!
             </p>
             <Link href="/" className="inline-flex items-center mt-12 text-lg font-semibold text-white hover:text-[#d8b4e2] transition-colors duration-300 animate-fade-in-up animation-delay-1500">
