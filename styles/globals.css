@@ -82,3 +82,46 @@
     @apply bg-background text-foreground;
   }
 }
+
+.arrow {
+  position: relative;
+  display: inline-block;
+  width: auto;
+  height: 1em;
+  line-height: 1;
+  text-align: center;
+}
+
+.arrow::before {
+  content: "↔";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  bottom: 100%;
+  margin-bottom: 2px; /* Adjust this value to move the arrow up or down */
+  line-height: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.arrow-uppercase::before {
+  /* EDIT SIZE HERE: Increase or decrease from 0.4em for larger or smaller arrow */
+  font-size: 0.5em;
+  /* Adjust the width to ensure proper centering for uppercase letters */
+  width: 250%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.arrow-lowercase::before {
+  /* EDIT SIZE HERE: Increase or decrease from 0.4em for larger or smaller arrow */
+  font-size: 0.5em;
+  margin-bottom: -2px;
+}
+
+.arrow-no-margin {
+  margin-right: 1px;
+}

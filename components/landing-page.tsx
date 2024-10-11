@@ -15,6 +15,27 @@ const navigation = [
   { name: 'Pricing', href: '/pricing' },
 ]
 
+const Feature = ({ icon: Icon, name, description }) => {
+  const firstLetter = name.charAt(0);
+  const restOfName = name.slice(1);
+  const isUpperCase = firstLetter === firstLetter.toUpperCase();
+
+  return (
+    <div className="flex flex-col items-start">
+      <div className="flex items-center mb-2">
+        <Icon className="h-6 w-6 mr-3 text-[#ae759f]" />
+        <h3 className="text-lg font-semibold text-white flex items-baseline">
+          <span className={`relative arrow arrow-no-margin ${isUpperCase ? 'arrow-uppercase' : 'arrow-lowercase'}`}>
+            {firstLetter}
+          </span>
+          <span className="ml-[-1px]">{restOfName}</span>
+        </h3>
+      </div>
+      <p className="mt-2 text-sm text-[#d8b4e2]">{description}</p>
+    </div>
+  )
+}
+
 export default function LandingPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [isImageModalOpen, setIsImageModalOpen] = useState(false)
@@ -163,8 +184,8 @@ export default function LandingPage() {
                   We designed an essential suite of tools ready to accompany teachers every step of the way, any time of the day.
                 </p>
               </div>
-              <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-                <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
+              <div className="mx-auto mt-16 sm:mt-20 lg:mt-24">
+                <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3 justify-items-center">
                   {[
                     {
                       name: 'cApps',
@@ -182,17 +203,9 @@ export default function LandingPage() {
                       icon: GraduationCap,
                     },
                   ].map((feature) => (
-                    <div key={feature.name} className="flex flex-col">
-                      <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-white">
-                        <feature.icon className="h-5 w-5 flex-none text-[#ae759f]" aria-hidden="true" />
-                        {feature.name}
-                      </dt>
-                      <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-[#d8b4e2]">
-                        <p className="flex-auto">{feature.description}</p>
-                      </dd>
-                    </div>
+                    <Feature key={feature.name} {...feature} />
                   ))}
-                </dl>
+                </div>
               </div>
             </div>
           </section>
