@@ -1,10 +1,12 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import {Menu, X, ChevronDown, Cpu, BookOpen, GraduationCap, Linkedin, Twitter, Github, XIcon} from 'lucide-react'
+import {Menu, X, Blocks, Cpu, Linkedin, Twitter, Github, Presentation} from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { Button } from '@/components/ui/button'
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog"
+import { motion } from "framer-motion"
 
 const navigation = [
   { name: 'Our Mission', href: '#mission' },
@@ -40,6 +42,11 @@ export default function LandingPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [isImageModalOpen, setIsImageModalOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const fadeInUp = {
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.6 }
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -88,7 +95,7 @@ export default function LandingPage() {
               ))}
             </div>
             <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-              <a href="mailto:ark.deliev@edion.io"
+              <a href="mailto:info@edion.io"
                  className="text-sm font-semibold leading-6 text-white hover:text-[#d8b4e2] transition-colors duration-300">
                 Contact Us <span aria-hidden="true">&rarr;</span>
               </a>
@@ -155,12 +162,12 @@ export default function LandingPage() {
                 </p>
                 <div className="mt-10 flex items-center justify-center gap-x-6 animate-fade-in-up animation-delay-600">
                   <a
-                      href="#"
+                      href="#mission"
                       className="rounded-md bg-[#210b2c] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#bc96e6] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#d8b4e2] transition-all duration-300"
                   >
                     Get started
                   </a>
-                  <a href="#"
+                  <a href="#what-we-do"
                      className="text-sm font-semibold leading-6 text-white hover:text-[#d8b4e2] transition-colors duration-300">
                     Learn more <span aria-hidden="true">→</span>
                   </a>
@@ -182,39 +189,39 @@ export default function LandingPage() {
           </div>
         </section>
 
-          <section id="what-we-do" className="bg-[#210b2c] py-24 sm:py-32">
-            <div className="mx-auto max-w-7xl px-6 lg:px-8">
-              <div className="mx-auto max-w-2xl lg:text-center">
-                <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">What We Do</h2>
-                <p className="mt-6 text-lg leading-8 text-[#d8b4e2]">
-                  We designed an essential suite of tools ready to accompany teachers every step of the way, any time of the day.
-                </p>
-              </div>
-              <div className="mx-auto mt-16 sm:mt-20 lg:mt-24">
-                <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3 justify-items-center">
-                  {[
-                    {
-                      name: 'cApps',
-                      description: 'Lifelike applications that understand anyone and that anyone can understand. Effortlessly.',
-                      icon: Cpu,
-                    },
-                    {
-                      name: 'Chalk',
-                      description: 'The educator\'s workstation revolutionizing the way teachers handle administrative tasks.',
-                      icon: BookOpen,
-                    },
-                    {
-                      name: 'Pebbles',
-                      description: 'Personalized learning experiences that adapt to each student\'s needs and pace.',
-                      icon: GraduationCap,
-                    },
-                  ].map((feature) => (
-                    <Feature key={feature.name} {...feature} />
-                  ))}
-                </div>
+        <section id="what-we-do" className="bg-[#210b2c] py-24 sm:py-32">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="mx-auto max-w-2xl lg:text-center">
+              <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">What We Do</h2>
+              <p className="mt-6 text-lg leading-8 text-[#d8b4e2]">
+                We designed an essential suite of tools ready to accompany teachers every step of the way, any time of the day.
+              </p>
+            </div>
+            <div className="mx-auto mt-16 sm:mt-20 lg:mt-24">
+              <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3 justify-items-center">
+                {[
+                  {
+                    name: 'cApps',
+                    description: 'Lifelike applications that understand anyone and that anyone can understand. Effortlessly.',
+                    icon: Cpu,
+                  },
+                  {
+                    name: 'Chalk',
+                    description: 'The educator\'s workstation revolutionizing the way teachers handle administrative tasks.',
+                    icon: Presentation,
+                  },
+                  {
+                    name: 'Pebbles',
+                    description: 'Personalized learning experiences that adapt to each student\'s needs and pace.',
+                    icon: Blocks,
+                  },
+                ].map((feature) => (
+                  <Feature key={feature.name} {...feature} />
+                ))}
               </div>
             </div>
-          </section>
+          </div>
+        </section>
 
         <section id="our-product" className="bg-[#55286f] py-24 sm:py-32">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -225,88 +232,145 @@ export default function LandingPage() {
               </p>
             </div>
             <div className="mt-16 space-y-16">
-              {/* Slate subsection */}
-              <div className="flex flex-col lg:flex-row items-center justify-center gap-8">
-                <div className="w-full lg:w-1/2">
-                  <Dialog open={isImageModalOpen} onOpenChange={setIsImageModalOpen}>
-                    <DialogTrigger asChild>
-                      <button
-                          className="w-full focus:outline-none focus:ring-2 focus:ring-[#ae759f] focus:ring-offset-2 focus:ring-offset-[#55286f] rounded-lg overflow-hidden">
-                        <Image
+              {/* cApps subsection */}
+              <motion.div 
+                className="bg-[#210b2c] rounded-lg p-8 shadow-lg"
+                {...fadeInUp}
+              >
+                <div className="lg:grid lg:grid-cols-2 lg:gap-8 items-center">
+                  <div>
+                    <h3 className="text-2xl font-bold text-white flex items-baseline">
+                      <span className="relative arrow arrow-no-margin arrow-lowercase">c</span>
+                      <span className="ml-[-1px]">Apps: Talk to Your Application</span>
+                    </h3>
+                    <p className="mt-3 text-lg text-[#e8d2ee]">
+                      Conversational apps (
+                      <span className="relative arrow arrow-no-margin arrow-lowercase">c</span>
+                      <span className="ml-[-1px]">Apps</span>
+                      ) are smart, self-explanatory, speech-first applications designed to meet a user's needs while gradually adapting to their preferred experience.
+                    </p>
+                    <ul className="mt-4 list-disc list-inside text-[#e8d2ee] space-y-2">
+                      <li>Adaptive interface that learns and changes based on user interactions</li>
+                      <li>Ability to provide an explanation to AI reasoning and actions</li>
+                      <li>Accessible to users of all technical skill levels</li>
+                      <li>Enhanced user experience and efficiency</li>
+                    </ul>
+                    <Button
+                      variant="secondary"
+                      className="mt-4 bg-[#ae759f] text-white hover:bg-[#bc96e6] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                      disabled
+                    >
+                      Explore cApps
+                    </Button>
+                  </div>
+                  <div className="mt-8 lg:mt-0">
+                    <Image
+                      src="/placeholder.svg?height=300&width=400"
+                      alt="cApps Illustration"
+                      width={400}
+                      height={300}
+                      className="rounded-lg shadow-xl"
+                    />
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Chalk subsection */}
+              <motion.div 
+                className="bg-[#3a1d4c] rounded-lg p-8 shadow-lg"
+                {...fadeInUp}
+              >
+                <div className="flex flex-col lg:flex-row items-center justify-center gap-8">
+                  <div className="w-full lg:w-1/2">
+                    <Dialog open={isImageModalOpen} onOpenChange={setIsImageModalOpen}>
+                      <DialogTrigger asChild>
+                        <button className="w-full focus:outline-none focus:ring-2 focus:ring-[#ae759f] focus:ring-offset-2 focus:ring-offset-[#3a1d4c] rounded-lg overflow-hidden">
+                          <Image
                             src="/demo.gif"
-                            alt="Slate Demo"
+                            alt="Chalk Demo"
                             className="rounded-lg shadow-xl w-full h-auto transition-transform duration-300 transform hover:scale-105"
                             width={2000}
                             height={2000}
-                        />
-                      </button>
-                    </DialogTrigger>
-                    <DialogContent className="max-w-4xl w-full bg-[#55286f] border-none">
-                      <Image
+                          />
+                        </button>
+                      </DialogTrigger>
+                      <DialogContent className="max-w-4xl w-full bg-[#55286f] border-none">
+                        <Image
                           src="/demo.gif"
-                          alt="Slate Demo"
+                          alt="Chalk Demo"
                           className="w-full h-auto"
                           width={2000}
                           height={2000}
-                      />
-                    </DialogContent>
-                  </Dialog>
+                        />
+                      </DialogContent>
+                    </Dialog>
+                  </div>
+                  <div className="w-full lg:w-1/2 space-y-4">
+                    <h3 className="text-2xl font-bold text-white flex items-baseline">
+                      <span className="relative arrow arrow-no-margin arrow-uppercase">C</span>
+                      <span className="ml-[-1px]">halk: The Educator's Workbench</span>
+                    </h3>
+                    <p className="text-[#e8d2ee] mt-3 text-lg">
+                      <span className="relative arrow arrow-no-margin arrow-uppercase">C</span>
+                      <span className="ml-[-1px]">halk</span> takes care of the most time-consuming administrative tasks, giving educators more time to focus on what truly matters—teaching and building meaningful connections with their students.
+                    </p>
+                    <ul className="list-disc list-inside text-[#e8d2ee] space-y-2">
+                      <li>Improved ease and speed of administrative tasks like report-generation</li>
+                      <li>Simplified grading with personalized feedback suggestions</li>
+                      <li>Fully customizable content creation</li>
+                      <li>Reduced manual effort</li>
+                    </ul>
+                    <Button
+                      variant="secondary"
+                      className="mt-4 bg-[#ae759f] text-white hover:bg-[#bc96e6] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                      disabled
+                    >
+                      Learn More About Chalk
+                    </Button>
+                  </div>
                 </div>
-                <div className="w-full lg:w-1/2 space-y-4">
-                  <h3 className="text-2xl font-bold text-white">Slate: The Educator's Workbench</h3>
-                  <p className="text-[#e8d2ee]">Slate streamlines administrative tasks, freeing up valuable time for
-                    educators to focus on what matters most - teaching and connecting with students.</p>
-                  <ul className="list-disc list-inside text-[#e8d2ee] space-y-2">
-                    <li>Automated grading and report generation</li>
-                    <li>Personalized content creation</li>
-                    <li>Student progress tracking</li>
-                    <li>Intuitive, conversational interface</li>
-                  </ul>
-                  <a href="#"
-                     className="inline-block mt-4 px-4 py-2 bg-[#ae759f] text-white rounded-md hover:bg-[#bc96e6] transition-colors">
-                    Learn More About Slate
-                  </a>
-                </div>
-              </div>
+              </motion.div>
 
-              {/* cApps subsection */}
-              <div className="lg:grid lg:grid-cols-2 lg:gap-8 items-center">
-                <div className="mt-10  lg:mt-0">
-                  <h3 className="text-2xl font-bold text-white">cApps: Talk To Your Application</h3>
-                  <p className="mt-3 text-lg text-[#e8d2ee]">cApps are lifelike applications designed to meet any
-                    educator's needs through a speech-first interface. They make technology accessible to everyone,
-                    regardless of their digital skills.</p>
-                  <ul className="mt-4 list-disc list-inside text-[#e8d2ee] space-y-2">
-                    <li>Conversational interface for intuitive interaction</li>
-                    <li>Ability to explain reasoning and actions</li>
-                    <li>Enhanced user experience and efficiency</li>
-                    <li>Accessible to users of all technical skill levels</li>
-                  </ul>
-                  <a href="#"
-                     className="inline-block mt-4 px-4 py-2 bg-[#ae759f] text-white rounded-md hover:bg-[#bc96e6] transition-colors">
-                    Explore cApps
-                  </a>
+              {/* Pebbles subsection */}
+              <motion.div 
+                className="bg-[#210b2c] rounded-lg p-8 shadow-lg"
+                {...fadeInUp}
+              >
+                <div className="lg:grid lg:grid-cols-2 lg:gap-8 items-center">
+                  <div className="mt-10 lg:mt-0">
+                    <h3 className="text-2xl font-bold text-white flex items-baseline">
+                      <span className="relative arrow arrow-no-margin arrow-uppercase">P</span>
+                      <span className="ml-[-1px]">ebbles: An Intelligent Tutoring System</span>
+                    </h3>
+                    <p className="mt-3 text-lg text-[#e8d2ee]">
+                      <span className="relative arrow arrow-no-margin arrow-uppercase">P</span>
+                      <span className="ml-[-1px]">ebbles</span> generates personalized learning experiences on the fly, matching each student's unique learning style and environment.
+                    </p>
+                    <ul className="mt-4 list-disc list-inside text-[#e8d2ee] space-y-2">
+                      <li>Differentiated learning pathways</li>
+                      <li>Interactive and engaging content</li>
+                      <li>Real-time feedback and explanations</li>
+                      <li>Data-driven insights for educators</li>
+                    </ul>
+                    <Button
+                      variant="secondary"
+                      className="mt-4 bg-[#ae759f] text-white hover:bg-[#bc96e6] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                      disabled
+                    >
+                      Discover Pebbles
+                    </Button>
+                  </div>
+                  <div className="mt-8 lg:mt-0">
+                    <Image
+                      src="/placeholder.svg?height=300&width=400"
+                      alt="Pebbles Illustration"
+                      width={400}
+                      height={300}
+                      className="rounded-lg shadow-xl"
+                    />
+                  </div>
                 </div>
-              </div>
-
-              <div className="lg:grid lg:grid-cols-2 lg:gap-8 items-center">
-                <div className="mt-10 lg:mt-0 lg:col-start-2">
-                  <h3 className="text-2xl font-bold text-white">Graphite: Intelligent Tutoring System</h3>
-                  <p className="mt-3 text-lg text-[#e8d2ee]">Graphite offers personalized learning experiences that
-                    adapt to each student's needs and pace, creating a more effective and responsive educational
-                    environment.</p>
-                  <ul className="mt-4 list-disc list-inside text-[#e8d2ee] space-y-2">
-                    <li>Personalized learning pathways</li>
-                    <li>Interactive and engaging content</li>
-                    <li>Real-time feedback and explanations</li>
-                    <li>Data-driven insights for educators</li>
-                  </ul>
-                  <a href="#"
-                     className="inline-block mt-4 px-4 py-2 bg-[#ae759f] text-white rounded-md hover:bg-[#bc96e6] transition-colors">
-                    Discover Graphite
-                  </a>
-                </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </section>

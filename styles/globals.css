@@ -119,7 +119,7 @@
 .arrow-lowercase::before {
   /* EDIT SIZE HERE: Increase or decrease from 0.4em for larger or smaller arrow */
   font-size: 0.4em;
-  margin-bottom: -2px;
+  margin-bottom: -3px;
 }
 
 .arrow-no-margin {
