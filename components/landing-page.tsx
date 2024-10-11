@@ -199,12 +199,12 @@ export default function LandingPage() {
                       icon: Cpu,
                     },
                     {
-                      name: 'Slate',
+                      name: 'Chalk',
                       description: 'The educator\'s workstation revolutionizing the way teachers handle administrative tasks.',
                       icon: BookOpen,
                     },
                     {
-                      name: 'Graphite',
+                      name: 'Pebbles',
                       description: 'Personalized learning experiences that adapt to each student\'s needs and pace.',
                       icon: GraduationCap,
                     },
@@ -386,32 +386,38 @@ export default function LandingPage() {
           </div>
         </section>
 
-        <section id="affiliates" className="py-24 sm:py-32">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <section id="affiliates" className="py-24 sm:py-32 bg-[#210b2c] relative overflow-hidden">
+          <div className="absolute inset-0">
+            <div className="absolute inset-0 bg-gradient-to-r from-[#ae759f] to-[#d8b4e2]"></div>
+            <div className="absolute inset-0 opacity-30">
+              <div className="absolute inset-0 bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns=%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 viewBox=%220 0 80 80%22 width=%2280%22 height=%2280%22%3E%3Ccircle cx=%2240%22 cy=%2240%22 r=%2236%22 fill=%22%23d8b4e2%22 fill-opacity=%22.2%22%2F%3E%3C%2Fsvg%3E')] bg-repeat animate-pulse"></div>
+            </div>
+          </div>
+          <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
             <div className="mx-auto max-w-2xl lg:text-center">
-              <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Our Affiliates</h2>
-              <p className="mt-6 text-lg leading-8 text-[#d8b4e2]">
-                We're proud to work with these outstanding organizations.
-              </p>
+              <h2 className="text-3xl font-bold tracking-tight text-white sm:text-3xl">Our Affiliates</h2>
             </div>
             <div className="mt-16 flex flex-wrap justify-center items-center gap-12">
               <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/venturelab-north-logo-qMlz5z1ER8xwbYsjuMFahlcWckmBqi.svg"
-                  alt="VentureLab North Logo"
-                  width={273}
-                  height={82}
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/venturelab-north-logo-qMlz5z1ER8xwbYsjuMFahlcWckmBqi.svg"
+                alt="VentureLab North Logo"
+                width={163.8}
+                height={49.2}
+                className="transform hover:scale-110 transition-transform duration-300 filter brightness-100 hover:brightness-125 animate-fade-in"
               />
               <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/eurc-logo-jxbUzKkYcKuIo6Arjis7P38bogGkUc.svg"
-                  alt="EURC Logo"
-                  width={130}
-                  height={82}
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/eurc-logo-jxbUzKkYcKuIo6Arjis7P38bogGkUc.svg"
+                alt="EURC Logo"
+                width={78}
+                height={49.2}
+                className="transform hover:scale-110 transition-transform duration-300 filter brightness-100 hover:brightness-125 animate-fade-in animation-delay-200"
               />
               <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/snn-logo-EZ8EW4TSKsU7uipTCNb1N00vdv6FQb.svg"
-                  alt="SNN Logo"
-                  width={152}
-                  height={88}
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/snn-logo-EZ8EW4TSKsU7uipTCNb1N00vdv6FQb.svg"
+                alt="SNN Logo"
+                width={91.2}
+                height={52.8}
+                className="transform hover:scale-110 transition-transform duration-300 filter brightness-100 hover:brightness-125 animate-fade-in animation-delay-400"
               />
             </div>
           </div>
@@ -422,15 +428,15 @@ export default function LandingPage() {
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               <div className="flex items-center space-x-4">
                 <a href="https://www.linkedin.com/company/edion-io" target="_blank" rel="noopener noreferrer"
-                   className="text-white hover:text-[#d8b4e2] transition-colors">
+                  className="text-white hover:text-[#d8b4e2] transition-colors">
                   <Linkedin size={24}/>
                 </a>
-                <a href="https://x.com/edion_io" target="_blank" rel="noopener noreferrer"
-                   className="text-white hover:text-[#d8b4e2] transition-colors">
-                  <XIcon size={24}/>
+                <a href="https://twitter.com/edion_io" target="_blank" rel="noopener noreferrer"
+                  className="text-white hover:text-[#d8b4e2] transition-colors">
+                  <Twitter size={24}/>
                 </a>
                 <a href="https://github.com/edion-io" target="_blank" rel="noopener noreferrer"
-                   className="text-white hover:text-[#d8b4e2] transition-colors">
+                  className="text-white hover:text-[#d8b4e2] transition-colors">
                   <Github size={24}/>
                 </a>
               </div>

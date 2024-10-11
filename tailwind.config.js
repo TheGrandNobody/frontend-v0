@@ -12,6 +12,7 @@ module.exports = {
         'gradient-x': 'gradient-x 15s ease infinite',
         'fade-in-up': 'fade-in-up 0.5s ease-out',
         'pulse': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        
       },
       keyframes: {
         'gradient-x': {
