@@ -1,12 +1,12 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import {Menu, X, Blocks, Cpu, Linkedin, Twitter, Github, Presentation} from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog"
-import { motion } from "framer-motion"
+import { motion, useAnimation } from "framer-motion"
 
 const navigation = [
   { name: 'Our Mission', href: '#mission' },
@@ -42,10 +42,40 @@ export default function LandingPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [isImageModalOpen, setIsImageModalOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const controls = useAnimation()
+  const ref = useRef(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          controls.start("visible")
+        }
+      },
+      { threshold: 0.1 }
+    )
+
+    if (ref.current) {
+      observer.observe(ref.current)
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current)
+      }
+    }
+  }, [controls])
+
   const fadeInUp = {
-    initial: { opacity: 0, y: 20 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6 }
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }
   }
 
   useEffect(() => {
@@ -231,23 +261,23 @@ export default function LandingPage() {
                 Discover how our AI-powered solutions are transforming the educational landscape.
               </p>
             </div>
-            <div className="mt-16 space-y-16">
+            <div className="mt-16 space-y-16" ref={ref}>
               {/* cApps subsection */}
               <motion.div 
-                className="bg-[#210b2c] rounded-lg p-8 shadow-lg"
-                {...fadeInUp}
+                className="bg-[#210b2c] rounded-lg p-8 shadow-lg relative overflow-hidden"
+                initial="hidden"
+                animate={controls}
+                variants={fadeInUp}
               >
-                <div className="lg:grid lg:grid-cols-2 lg:gap-8 items-center">
+                <div className="absolute top-0 right-0 w-1/2 h-full bg-[#3a1d4c] transform -skew-x-12"></div>
+                <div className="lg:grid lg:grid-cols-2 lg:gap-8 items-center relative z-10">
                   <div>
                     <h3 className="text-2xl font-bold text-white flex items-baseline">
                       <span className="relative arrow arrow-no-margin arrow-lowercase">c</span>
-                      <span className="ml-[-1px]">Apps: Talk to Your Application</span>
+                      <span className="ml-[-1px]">Apps: Talk to Your App</span>
                     </h3>
                     <p className="mt-3 text-lg text-[#e8d2ee]">
-                      Conversational apps (
-                      <span className="relative arrow arrow-no-margin arrow-lowercase">c</span>
-                      <span className="ml-[-1px]">Apps</span>
-                      ) are smart, self-explanatory, speech-first applications designed to meet a user's needs while gradually adapting to their preferred experience.
+                      Conversational apps are speech-first applications designed to meet users' needs while gradually adapting to their preferred experiences.
                     </p>
                     <ul className="mt-4 list-disc list-inside text-[#e8d2ee] space-y-2">
                       <li>Adaptive interface that learns and changes based on user interactions</li>
@@ -265,10 +295,10 @@ export default function LandingPage() {
                   </div>
                   <div className="mt-8 lg:mt-0">
                     <Image
-                      src="/placeholder.svg?height=300&width=400"
+                      src="/front.png"
                       alt="cApps Illustration"
-                      width={400}
-                      height={300}
+                      width={2000}
+                      height={2000}
                       className="rounded-lg shadow-xl"
                     />
                   </div>
@@ -277,33 +307,21 @@ export default function LandingPage() {
 
               {/* Chalk subsection */}
               <motion.div 
-                className="bg-[#3a1d4c] rounded-lg p-8 shadow-lg"
-                {...fadeInUp}
+                className="bg-[#210b2c] rounded-lg p-8 shadow-lg relative overflow-hidden"
+                initial="hidden"
+                animate={controls}
+                variants={fadeInUp}
               >
-                <div className="flex flex-col lg:flex-row items-center justify-center gap-8">
+                <div className="absolute top-0 left-0 w-1/2 h-full bg-[#3a1d4c] transform skew-x-12"></div>
+                <div className="flex flex-col lg:flex-row items-center justify-center gap-8 relative z-10">
                   <div className="w-full lg:w-1/2">
-                    <Dialog open={isImageModalOpen} onOpenChange={setIsImageModalOpen}>
-                      <DialogTrigger asChild>
-                        <button className="w-full focus:outline-none focus:ring-2 focus:ring-[#ae759f] focus:ring-offset-2 focus:ring-offset-[#3a1d4c] rounded-lg overflow-hidden">
-                          <Image
-                            src="/demo.gif"
-                            alt="Chalk Demo"
-                            className="rounded-lg shadow-xl w-full h-auto transition-transform duration-300 transform hover:scale-105"
-                            width={2000}
-                            height={2000}
-                          />
-                        </button>
-                      </DialogTrigger>
-                      <DialogContent className="max-w-4xl w-full bg-[#55286f] border-none">
-                        <Image
-                          src="/demo.gif"
-                          alt="Chalk Demo"
-                          className="w-full h-auto"
-                          width={2000}
-                          height={2000}
-                        />
-                      </DialogContent>
-                    </Dialog>
+                    <Image
+                      src="/demo.gif"
+                      alt="Chalk Demo"
+                      className="rounded-lg shadow-xl w-full h-auto transition-transform duration-300 transform hover:scale-105"
+                      width={2000}
+                      height={2000}
+                    />
                   </div>
                   <div className="w-full lg:w-1/2 space-y-4">
                     <h3 className="text-2xl font-bold text-white flex items-baseline">
@@ -312,31 +330,36 @@ export default function LandingPage() {
                     </h3>
                     <p className="text-[#e8d2ee] mt-3 text-lg">
                       <span className="relative arrow arrow-no-margin arrow-uppercase">C</span>
-                      <span className="ml-[-1px]">halk</span> takes care of the most time-consuming administrative tasks, giving educators more time to focus on what truly matters—teaching and building meaningful connections with their students.
+                      <span className="ml-[-1px]">halk</span> helps streamline the most time-consuming administrative tasks, giving educators more time to focus on what truly matters.
                     </p>
                     <ul className="list-disc list-inside text-[#e8d2ee] space-y-2">
-                      <li>Improved ease and speed of administrative tasks like report-generation</li>
                       <li>Simplified grading with personalized feedback suggestions</li>
+                      <li>Improved ease and speed of administrative tasks</li>
                       <li>Fully customizable content creation</li>
                       <li>Reduced manual effort</li>
                     </ul>
-                    <Button
-                      variant="secondary"
-                      className="mt-4 bg-[#ae759f] text-white hover:bg-[#bc96e6] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-                      disabled
-                    >
-                      Learn More About Chalk
-                    </Button>
+                    <div className="flex justify-end mt-4">
+                      <Button
+                        variant="secondary"
+                        className="bg-[#ae759f] text-white hover:bg-[#bc96e6] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                        disabled
+                      >
+                        Learn More About Chalk
+                      </Button>
+                    </div>
                   </div>
                 </div>
               </motion.div>
 
-              {/* Pebbles subsection */}
+              {/* Updated Pebbles subsection */}
               <motion.div 
-                className="bg-[#210b2c] rounded-lg p-8 shadow-lg"
-                {...fadeInUp}
+                className="bg-[#210b2c] rounded-lg p-8 shadow-lg relative overflow-hidden"
+                initial="hidden"
+                animate={controls}
+                variants={fadeInUp}
               >
-                <div className="lg:grid lg:grid-cols-2 lg:gap-8 items-center">
+                <div className="absolute top-0 right-0 w-1/2 h-full bg-[#3a1d4c] transform -skew-x-12"></div>
+                <div className="lg:grid lg:grid-cols-2 lg:gap-8 items-center relative z-10">
                   <div className="mt-10 lg:mt-0">
                     <h3 className="text-2xl font-bold text-white flex items-baseline">
                       <span className="relative arrow arrow-no-margin arrow-uppercase">P</span>
@@ -361,13 +384,47 @@ export default function LandingPage() {
                     </Button>
                   </div>
                   <div className="mt-8 lg:mt-0">
-                    <Image
-                      src="/placeholder.svg?height=300&width=400"
-                      alt="Pebbles Illustration"
-                      width={400}
-                      height={300}
-                      className="rounded-lg shadow-xl"
-                    />
+                    <div className="relative w-full h-0 pb-[56.25%] bg-gradient-to-br from-[#f4e2ff] to-[#ffb4fe] rounded-lg shadow-xl overflow-hidden">
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="relative">
+                          <motion.div
+                            className="absolute inset-0 rounded-full"
+                            animate={{
+                              scale: [1, 1.3, 1],
+                            }}
+                            transition={{
+                              duration: 2,
+                              repeat: Infinity,
+                              ease: "easeInOut",
+                            }}
+                          />
+                          <motion.p 
+                            className="text-2xl font-bold text-white relative z-10"
+                            animate={{
+                              scale: [1, 1.05, 1],
+                            }}
+                            transition={{
+                              duration: 2,
+                              repeat: Infinity,
+                              ease: "easeInOut",
+                            }}
+                          >
+                            Coming Soon
+                          </motion.p>
+                        </div>
+                      </div>
+                      <motion.div 
+                        className="absolute inset-0 bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns=%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 viewBox=%220 0 80 80%22 width=%2280%22 height=%2280%22%3E%3Ccircle cx=%2240%22 cy=%2240%22 r=%2236%22 fill=%22%23e2b4fe%22 fill-opacity=%22.1%22%2F%3E%3C%2Fsvg%3E')] bg-repeat"
+                        animate={{
+                          backgroundPosition: ["0% 0%", "100% 100%"],
+                        }}
+                        transition={{
+                          duration: 20,
+                          repeat: Infinity,
+                          ease: "linear",
+                        }}
+                      />
+                    </div>
                   </div>
                 </div>
               </motion.div>

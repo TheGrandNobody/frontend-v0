@@ -1,4 +1,4 @@
-import PricingPage from "@/components/pricing"
+import PricingPage from "@/components/pricing/pricing"
 
 export default function Home() {
   return (
