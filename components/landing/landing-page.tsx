@@ -17,7 +17,7 @@ const navigation = [
   { name: 'Pricing', href: '/pricing' },
 ]
 
-const Feature = ({ icon: Icon, name, description }) => {
+const Feature = ({ icon: Icon, name, description }: { icon: React.ElementType; name: string; description: string }) => {
   const firstLetter = name.charAt(0);
   const restOfName = name.slice(1);
   const isUpperCase = firstLetter === firstLetter.toUpperCase();
@@ -315,13 +315,26 @@ export default function LandingPage() {
                 <div className="absolute top-0 left-0 w-1/2 h-full bg-[#3a1d4c] transform skew-x-12"></div>
                 <div className="flex flex-col lg:flex-row items-center justify-center gap-8 relative z-10">
                   <div className="w-full lg:w-1/2">
-                    <Image
-                      src="/demo.gif"
-                      alt="Chalk Demo"
-                      className="rounded-lg shadow-xl w-full h-auto transition-transform duration-300 transform hover:scale-105"
-                      width={2000}
-                      height={2000}
-                    />
+                    <Dialog>
+                      <DialogTrigger>
+                        <Image
+                          src="/demo.gif"
+                          alt="Chalk Demo"
+                          className="rounded-lg shadow-xl w-full h-auto transition-transform duration-300 transform hover:scale-105 cursor-pointer"
+                          width={2000}
+                          height={2000}
+                        />
+                      </DialogTrigger>
+                      <DialogContent className="max-w-4xl">
+                        <Image
+                          src="/demo.gif"
+                          alt="Chalk Demo"
+                          className="w-full h-auto"
+                          width={2000}
+                          height={2000}
+                        />
+                      </DialogContent>
+                    </Dialog>
                   </div>
                   <div className="w-full lg:w-1/2 space-y-4">
                     <h3 className="text-2xl font-bold text-white flex items-baseline">
@@ -350,6 +363,7 @@ export default function LandingPage() {
                   </div>
                 </div>
               </motion.div>
+
 
               {/* Updated Pebbles subsection */}
               <motion.div 
