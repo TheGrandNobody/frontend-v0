@@ -125,7 +125,7 @@ export default function LandingPage() {
               ))}
             </div>
             <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-              <a href="mailto:info@edion.io"
+              <a href="mailto:omonne@edion.io"
                  className="text-sm font-semibold leading-6 text-white hover:text-[#d8b4e2] transition-colors duration-300">
                 Contact Us <span aria-hidden="true">&rarr;</span>
               </a>
