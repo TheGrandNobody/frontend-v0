@@ -462,8 +462,7 @@ export default function LandingPage() {
             <div className="mx-auto max-w-2xl lg:text-center">
               <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Meet the Team</h2>
               <p className="mt-6 text-lg leading-8 text-[#e8d2ee]">
-                Our diverse team brings expertise in AI, seasoned entrepreneurship, business accumen and real-world
-                applications.
+                Our team blends strong technical expertise in AI with a mix of entrepreneurial, economic, and industry experience.
               </p>
             </div>
             <ul role="list"
@@ -473,16 +472,19 @@ export default function LandingPage() {
                   name: 'Ark Deliev',
                   role: 'Co-founder, CEO',
                   imageUrl: '/ark.png',
+                  linkedin: 'https://www.linkedin.com/in/arkdeliev/',
                 },
                 {
                   name: 'Olivia Monné',
                   role: 'Co-founder, CTO',
                   imageUrl: '/olivia.png',
+                  linkedin: 'https://www.linkedin.com/in/olivia-monne',
                 },
                 {
                   name: 'Liam McGillycuddy',
                   role: 'Business & Outreach Coordinator',
                   imageUrl: '/liam.png',
+                  linkedin: 'https://www.linkedin.com/in/liam-mcgillycuddy-65b2a01ba/',
                 },
                 {
                   name: 'Dingkang Pang',
@@ -513,7 +515,19 @@ export default function LandingPage() {
                         width={96}
                         height={96}
                     />
-                    <h3 className="mt-6 text-base font-semibold leading-7 tracking-tight text-white">{person.name}</h3>
+                    <h3 className="mt-6 text-base font-semibold leading-7 tracking-tight text-white flex items-center justify-center">
+                      {person.name}
+                      {person.linkedin && (
+                        <a 
+                          href={person.linkedin} 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          className="ml-2 text-[#e8d2ee] hover:text-white transition-colors inline-flex items-center"
+                        >
+                          <Linkedin size={16} className="relative top-[-1px]" />
+                        </a>
+                      )}
+                    </h3>
                     <p className="text-sm leading-6 text-[#e8d2ee]">{person.role}</p>
                   </li>
               ))}
