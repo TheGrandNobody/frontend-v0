@@ -476,7 +476,7 @@ export default function LandingPage() {
                 },
                 {
                   name: 'Olivia Monné',
-                  role: 'Co-founder, CTO',
+                  role: 'Technical Advisor',
                   imageUrl: '/olivia.png',
                   linkedin: 'https://www.linkedin.com/in/olivia-monne',
                 },
