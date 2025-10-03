@@ -470,13 +470,13 @@ export default function LandingPage() {
               {[
                 {
                   name: 'Ark Deliev',
-                  role: 'Co-founder, CEO',
+                  role: 'Co-founder',
                   imageUrl: '/ark.png',
                   linkedin: 'https://www.linkedin.com/in/arkdeliev/',
                 },
                 {
                   name: 'Olivia Monné',
-                  role: 'Technical Advisor',
+                  role: 'Co-founder',
                   imageUrl: '/olivia.png',
                   linkedin: 'https://www.linkedin.com/in/olivia-monne',
                 },
